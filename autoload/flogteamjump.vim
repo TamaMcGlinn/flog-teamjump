@@ -2,14 +2,14 @@ let g:flogteamjump_selected_team = v:null
 
 function! flogteamjump#Jump_To_Selected_Team(forwards) abort
   if type(g:flogteamjump_selected_team) != v:t_list
-    let g:flogteamjump_selected_team = g:flogteamjump_teams[0]
+    let g:flogteamjump_selected_team = g:flogteamjump_teams[0].members
   endif
   if a:forwards
     let l:flags = ''
   else
     let l:flags = 'b'
   endif
-  call search(flogteamjump#Build_Teamjump_Regex(g:flogteamjump_selected_team.members), l:flags)
+  call search(flogteamjump#Build_Teamjump_Regex(g:flogteamjump_selected_team), l:flags)
 endfunction
 
 function! flogteamjump#Build_Teamjump_Regex(authors) abort
@@ -22,7 +22,7 @@ endfunction
 function! flogteamjump#Select_Team(team) abort
   echom('Setting flogteamjump to track team ' . a:team.name)
   echom ' (' . join(a:team.members, ', ') . ')'
-  let g:flogteamjump_selected_team = a:team
+  let g:flogteamjump_selected_team = a:team.members
 endfunction
 
 function! flogteamjump#Choose_From_Teams() abort
