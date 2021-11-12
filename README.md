@@ -45,6 +45,6 @@ augroup END
 Use your plugin manager, for instance for plug:
 
 ```
-Plug 'TamaMcGlinn/flog-teamjump.vim'
+Plug 'TamaMcGlinn/flog-teamjump'
 ```
 
