@@ -24,8 +24,8 @@ augroup flogteamjump
 augroup END
 ```
 
-The first team is selected by default. You can use ]p to jump forwards and [p to jump backwards, ]]
-to display the teams and show them.
+The first team is selected by default. The above mappings, for example, give `]p` to jump forwards and `[p` to jump backwards, `]]`
+to show the teams and select one.
 
 An Alternative to the `flogteamjump#Choose_From_Teams()` menu is to define direct mappings to switch teams:
 
